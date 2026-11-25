@@ -1,84 +1,77 @@
-# REST API для проекта Yatube
+# Yatube REST API
 
-### Описание проекта:
-Данный API для социальной сети блогеров позволяет работать с постами, комментариями к ним, группами и подписками.
-Реализована аутентификация по JWT-токену.
+A REST API for the Yatube blogging social network. It works with posts, comments, groups and follows, and uses JWT authentication.
 
-Позволяет делать запросы к моделям проекта: Посты, Группы, Комментарии, Подписки.
-Поддерживает методы GET, POST, PUT, PATCH, DELETE.
-Предоставляет данные в формате JSON.
+Built in 2022 as part of the Yandex Practicum Python Developer course.
 
-### Используемые технологии: 
-Django
-Django REST Framework
-Pillow
-Pytest
-Python 3
-SimpleJWT
+## Features
 
-### Как запустить проект:
+- Endpoints for the project's models: posts, groups, comments and follows.
+- Supports GET, POST, PUT, PATCH and DELETE.
+- Returns data in JSON.
+- JWT authentication (SimpleJWT).
 
-Клонировать репозиторий и перейти в него в командной строке:
+## Tech stack
 
-```
-https://github.com/AxelVonReems/api_final_yatube.git
-```
+- Python 3
+- Django
+- Django REST Framework
+- SimpleJWT
+- Pillow
+- Pytest
 
-Перейти в папку с проектом
+## How to run the project
 
-```
-cd api_final_yatube
-```
+Clone the repository and go to the project folder:
 
-Cоздать и активировать виртуальное окружение:
-
-```
-WIN: python -m venv venv
-MAC: python3 -m venv venv
+```bash
+git clone https://github.com/AxelVonReems/API-Yatube.git
+cd API-Yatube
 ```
 
-```
-WIN: source venv/scripts/activate
-MAC: source venv/bin/activate
+Create and activate a virtual environment:
+
+```bash
+# Windows
+python -m venv venv
+source venv/scripts/activate
+
+# macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-Установить зависимости из файла requirements.txt:
+Install the dependencies:
 
-```
-WIN: python -m pip install --upgrade pip
-MAC: python3 -m pip install --upgrade pip
-```
-
-```
+```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
+Apply the migrations and start the server:
 
-```
-WIN: python manage.py migrate
-MAC: python3 manage.py migrate
-```
-
-Запустить проект:
-
-```
-WIN: python manage.py runserver
-MAC: python3 manage.py runserver
+```bash
+python manage.py migrate
+python manage.py runserver
 ```
 
-### Примеры запросов
-Документация:
-- /redoc/
+## Example requests
 
-Получить список всех публикаций:
-- /api/v1/posts/
+API documentation:
+- `/redoc/`
 
-Получить все комментарии к посту 1:
-- /api/v1/posts/1/comments/
+List all posts:
+- `GET /api/v1/posts/`
 
-Получить информацию о сообществе 1:
-- /api/v1/groups/1/
+All comments on post 1:
+- `GET /api/v1/posts/1/comments/`
 
-Получить все подписки пользователя, сделавшего запрос:
-- /api/v1/follow/
+Details of group 1:
+- `GET /api/v1/groups/1/`
+
+All follows of the requesting user:
+- `GET /api/v1/follow/`
+
+## Author
+
+Aleksei Smirnov - [GitHub](https://github.com/AxelVonReems)
